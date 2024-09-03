@@ -16,7 +16,7 @@ models:
     hasMany: [Item]
     fake:
       _count: 25
-      order_date: { dateTime: ["2020-01-01T00:00:00Z", "2023-01-01T00:00:00Z"] }
+      order_date: { dateTime: [2020-01-01T00:00:00Z, 2023-01-01T00:00:00Z] }
       status: { stringOf: ["pending", "shipped", "delivered"] }
 
   Item:
