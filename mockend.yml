@@ -6,29 +6,23 @@ models:
       email: email
       name: name
       balance: { float: [-250.0, 100.0] }
+      shipping_street: street
+      shipping_city: city
+      shipping_zip: zip
+      shipping_country: country
 
   Order:
     belongsTo: [User]
     hasMany: [Item]
     fake:
       _count: 25
-      status: { oneOfString: ["pending", "shipped", "delivered"] }
-
-
-  Shipping_Address:
-    belongsTo: [User]
-    fake:
-      _count: 1
-      street: street
-      city: city
-      zip: zip
-      country: country
+      status: { stringOf: ["pending", "shipped", "delivered"] }
 
   Item:
     belongsTo: [Order]
     fake:
       _count: 50
-      brand: { oneOfString: ["Goodyear", "Michelin", "Bridgestone", "Continental", "Pirelli"] }
-      product: { oneOfString: ["All-Season", "Winter", "Performance", "Touring", "All-Terrain"] }
+      brand: { stringOf: ["Goodyear", "Michelin", "Bridgestone", "Continental", "Pirelli"] }
+      product: { stringOf: ["All-Season", "Winter", "Performance", "Touring", "All-Terrain"] }
       price: { float: [50, 300] }
-      quantity: { integer: [1, 4] }
+      quantity: { int: [1, 4] }
