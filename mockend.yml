@@ -24,5 +24,5 @@ models:
       _count: 50
       brand: { stringOf: ["Goodyear", "Michelin", "Bridgestone", "Continental", "Pirelli"] }
       product: { stringOf: ["All-Season", "Winter", "Performance", "Touring", "All-Terrain"] }
-      price: { float: [50, 300] }
+      price: { float: [50.0, 300.0] }
       quantity: { int: [1, 4] }
