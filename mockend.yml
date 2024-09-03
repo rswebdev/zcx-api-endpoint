@@ -1,0 +1,34 @@
+models:
+  User:
+    hasMany: [Order]
+    fake:
+      _count: 10
+      email: email
+      name: name
+      balance: { float: [-250, 100] }
+
+  Order:
+    belongsTo: [User]
+    hasMany: [Item]
+    fake:
+      _count: 25
+      status: { enum: ['pending', 'shipped', 'delivered'] }
+
+
+  ShippingAddress:
+    belongsTo: [User]
+    fake:
+      _count: 5
+      street: street
+      city: city
+      zip: zip
+      country: country
+
+  Item:
+    belongsTo: [Order]
+    fake:
+      _count: 50
+      brand: { oneOf: ["Goodyear", "Michelin", "Bridgestone", "Continental", "Pirelli"] }
+      product: { oneOf: ["All-Season", "Winter", "Performance", "Touring", "All-Terrain"] }
+      price: { float: [50, 300] }
+      quantity: { integer: [1, 4] }
