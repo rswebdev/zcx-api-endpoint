@@ -1,6 +1,8 @@
 models:
   User:
     hasMany: [Order]
+    fake:
+      _count: 1
     data:
       - email: "test@test.de"
         name: "test"
