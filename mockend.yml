@@ -9,6 +9,7 @@ models:
         shipping_city: "Testadt"
         shipping_zip: "12345"
         shipping_country: "Deutschland"
+        _count: 1
 
   Order:
     belongsTo: [User]
